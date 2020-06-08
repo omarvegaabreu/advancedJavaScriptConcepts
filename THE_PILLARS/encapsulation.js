@@ -1,24 +1,26 @@
-// const user = {
-//   name: "Omar",
-//   password: 123456,
-//   email: "omarvega@hotmail.com",
-// };
+const user = {
+  name: "Omar",
+  password: 123456,
+  email: "omarvega@hotmail.com",
+};
 
 function safeInfo() {
-  const person = (userObject) => {
-    if (name === userObject.name) return `${name}`;
+  const person = (name) => {
+    if (name === user.name) {
+      return console.log(`${name}`);
+    }
   };
-  const password = (userObject) => {
-    if (password === 123456) {
-      return console.log(`Access granted ${userObject.name}`);
+  const password = (password) => {
+    if (password === user.password) {
+      return console.log(`Correct password ${user.name} access granted `);
     } else {
       return console.log("incorrect Password");
     }
   };
 
-  const email = (userObject) => {
-    if (email === userObject.email) {
-      return `Email is ${userObject.email}`;
+  const email = (email) => {
+    if (email === user.email) {
+      return console.log(`Email is ${email}`);
     }
   };
 
@@ -30,6 +32,6 @@ function safeInfo() {
 }
 
 const secureUser = safeInfo();
+secureUser.person(user.name);
 secureUser.email(user.email);
 secureUser.password(user.password);
-// secureUser.name(user.name);
